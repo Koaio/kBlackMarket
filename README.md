@@ -4,7 +4,9 @@
 - Configurable à 100%
 - Achat d'arme/item
 - Script protéger contre les cheaters.
-- Adapter pour new et old ESX
+- Old et New ESX supporté
+- Optimiser 0,00ms (menu fermer)
+- Changement du points du BlackMarket qui change à chaque restart du script
 
 (Une vidéo de prévisualisation du script sera bientôt mise sur YouTube.)
 
