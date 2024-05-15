@@ -1,12 +1,10 @@
 fx_version('cerulean')
 game('gta5')
-lua54 'yes'
 
-name 'kLib'
+name 'kBlackMarket'
 author "Koaio"
 version '1.0.0'
 repository 'https://github.com/Koaio/kBlackMarket'
-description "."
 
 shared_script 'config.lua'
 
