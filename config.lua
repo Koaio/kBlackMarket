@@ -1,11 +1,11 @@
 Config = {}
 
-Config.Debug = true -- if you want debug the script (print)
+Config.Debug = true -- Si vous voulez déboguer le script (print)
 
 Config.Framework = {
     Version = 'new', -- old = esx version 1.1/1.2/base calif... // new = ESX Legacy 
-    getSharedObject = 'esx:getSharedObject', -- change if your esx definition is not the same
-    Resource = 'es_extended' -- change if your framework name is not the same
+    getSharedObject = 'esx:getSharedObject', -- Changez si votre définition ESX n'est pas la même.
+    Resource = 'es_extended' -- Changez si le nom de votre framework n'est pas le même.
 }
 
 Config.Accounts = 'bank'
@@ -13,16 +13,16 @@ Config.Accounts = 'bank'
 Config.MenuTitle = "BlackMarket"
 Config.MenuDescription = "Voici les articles que je propose"
 
-Config.MarkerType = 25 -- The type of marker you want (https://docs.fivem.net/docs/game-references/markers/)
-Config.MarkerColor = { -- The color of the marker
-    R = 255, -- Red
-    G = 255, -- Green
-    B = 255, -- Blue
+Config.MarkerType = 25 -- Le type de marker que vous souhaitez. (https://docs.fivem.net/docs/game-references/markers/)
+Config.MarkerColor = { -- La couleur du marker
+    R = 255, -- Rouge
+    G = 255, -- Vert
+    B = 255, -- Bleu
 }
 
 Config.Distance = { 
-    Marker = 5.0, -- The distance you can see the marker
-    Interact = 1.0 -- The distance you can interact with it
+    Marker = 5.0, -- La distance à laquelle vous pouvez voir le marker.
+    Interact = 1.0 -- La distance à laquelle vous pouvez interagir avec lui
 }
 
 Config.ListObjetsMenu = {
