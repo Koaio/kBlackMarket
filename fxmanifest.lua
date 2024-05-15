@@ -5,6 +5,7 @@ name 'kBlackMarket'
 author "Koaio"
 version '1.0.0'
 repository 'https://github.com/Koaio/kBlackMarket'
+description 'Système de BlackMarket totalement configurable.'
 
 shared_script 'config.lua'
 
