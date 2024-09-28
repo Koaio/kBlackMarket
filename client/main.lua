@@ -26,7 +26,10 @@ Citizen.CreateThread(function()
             Wait(1500)
         end
 
-        local dist = #(GetEntityCoords(PlayerPedId()) - BlackMarket["zones"])
+        local playerPed = PlayerPedId()
+        local playerPos = GetEntityCoords(playerPed)
+
+        local dist = #(playerPos - BlackMarket["zones"])
         if dist < Config.Distance.Marker then
             BlackMarket["isProche"] = true
             DrawMarker(Config.MarkerType, BlackMarket["zones"].x, BlackMarket["zones"].y, BlackMarket["zones"].z-0.98, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.55, 0.55, 0.55, Config.MarkerColor.R , Config.MarkerColor.G, Config.MarkerColor.B, 255, false, false, 2, false, false, false, false)

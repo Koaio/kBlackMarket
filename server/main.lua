@@ -30,14 +30,21 @@ RegisterNetEvent('koaio:blackmarket:buy')
 AddEventHandler('koaio:blackmarket:buy', function(item, type)
     if Config.ListObjetsSecurity[item] == nil then return DropPlayer(source, "Tentative de triche avec le BlackMarket.") end
     local xPlayer = ESX.GetPlayerFromId(source)
+    if not xPlayer then return end
     if Config.ListObjetsSecurity[item].type == 'item' then
         if xPlayer.canCarryItem(item, 1) then
             if xPlayer.getAccount(Config.Accounts).money >= Config.ListObjetsSecurity[item].price then
                 xPlayer.removeAccountMoney(Config.Accounts, Config.ListObjetsSecurity[item].price)
                 xPlayer.addInventoryItem(item, 1)
                 xPlayer.showNotification(("Vous avez acheté %s pour %s$"):format(Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+                if Config.Debug then
+                    print(("Le joueur %s(%s) a acheté %s pour %s$"):format(xPlayer.name, xPlayer.identifier, Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+                end
             else
                 xPlayer.showNotification("Vous n'avez pas assez d'argent pour payer cette objet.")
+                if Config.Debug then
+                    print(("Le joueur %s(%s) a tenté d'acheté %s pour %s$ mais il n'a pas assez d'argent"):format(xPlayer.name, xPlayer.identifier, Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+                end
             end
         else
             xPlayer.showNotification("Vous avez trop d'objets sur vous.")
@@ -47,8 +54,14 @@ AddEventHandler('koaio:blackmarket:buy', function(item, type)
             xPlayer.removeAccountMoney(Config.Accounts, Config.ListObjetsSecurity[item].price)
             xPlayer.addWeapon(item, 250)
             xPlayer.showNotification(("Vous avez acheté %s pour %s$"):format(Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+            if Config.Debug then
+                print(("Le joueur %s(%s) a acheté %s pour %s$"):format(xPlayer.name, xPlayer.identifier, Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+            end
         else
             xPlayer.showNotification("Vous n'avez pas assez d'argent pour payer cette arme.")
+            if Config.Debug then
+                print(("Le joueur %s(%s) a tenté d'acheté %s pour %s$ mais il n'a pas assez d'argent"):format(xPlayer.name, xPlayer.identifier, Config.ListObjetsSecurity[item].label, Config.ListObjetsSecurity[item].price))
+            end
         end
     end
 end)
